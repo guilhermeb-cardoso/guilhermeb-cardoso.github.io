@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8"> <!-- Sets the character encoding for the document -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on mobile devices -->
@@ -21,252 +21,286 @@
             scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
         }
 
+        /* Make all scrolls smooth */
+        html {
+            scroll-behavior: smooth;
+        }
+        
         /* Header styling */
         header {
-            background: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background for the header */
-            color: #fff; /* White text color */
-            padding: 10px 20px; /* Padding around the header */
-            position: fixed; /* Fixes the header at the top of the viewport */
-            width: 100%; /* Full width of the header */
-            top: 0; /* Positions the header at the top */
-            display: flex; /* Enables flexbox layout */
-            justify-content: space-between; /* Space between logo and navigation */
-            align-items: center; /* Vertically centers the items */
-            z-index: 1000; /* Ensures the header is above other content */
+            background: linear-gradient(135deg, #3b3b3b, #1a1a1a); /* Gradient background */
+            color: #fff;
+            padding: 12px 30px;
+            position: fixed;
+            width: 90%; /* Slight margin from edges */
+            max-width: 1200px; /* Optional max width */
+            top: 20px; /* Floating effect */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            transition: top 0.3s, transform 0.3s, background 0.3s;
         }
 
-        /* Logo styling */
+        header:hover {
+            transform: translateX(-50%) scale(1.02); /* Slight scale effect on hover */
+            background: linear-gradient(135deg, #4b4b4b, #2a2a2a);
+        }
+
         .logo {
-                font-family: 'Arial Narrow Bold'; /* Use a bold font for the logo */
-                font-size: clamp(1.2em, 2vw, 1.7em); /* Responsive font size with a larger max size */
-                color: #fff; /* White text color */
-                font-weight: bold; /* Make the text bold */
-                margin-bottom: 10px; /* Margin below the logo */
+            font-family: 'Arial Narrow Bold';
+            font-size: clamp(1.5em, 2.5vw, 2em);
+            font-weight: bold;
+            letter-spacing: 1px; /* Slight spacing for elegance */
+            color: #fff;
         }
 
-        /* Navigation styling */
         nav ul {
-            list-style: none; /* Removes bullet points from the list */
-            display: flex; /* Displays the list items in a row */
-            padding: 0; /* Removes padding from the list */
-        }
-
-        nav ul li {
-            margin: 0 15px; /* Margin between navigation items */
+            list-style: none;
+            display: flex;
+            gap: 25px; /* Increased spacing between links */
         }
 
         nav ul li a {
-            color: #fff; /* White text color for links */
-            text-decoration: none; /* Removes underline from links */
-            font-weight: bold; /* Makes the link text bold */
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: background 0.3s, color 0.3s;
         }
+
+        nav ul li a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
         @media (max-width: 768px) {
             header {
-                background: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background for the header */
-                color: #fff; /* White text color */
-                padding: 10px 20px; /* Padding around the header */
-                position: fixed; /* Fixes the header at the top of the viewport */
-                width: 100%; /* Full width of the header */
-                top: 0; /* Positions the header at the top */
-                display: flex; /* Enables flexbox layout */
-                flex-direction: column; /* Stack items vertically */
-                align-items: center; /* Center items horizontally */
-                z-index: 1000; /* Ensures the header is above other content */
-                transition: top 0.3s; /* Smooth transition for hiding/showing the navbar */
-            }
-
-            /* Logo styling */
-            .logo {
-                font-family: 'Arial Narrow Bold'; /* Use a bold font for the logo */
-                font-size: clamp(1.7em, 4vw, 3em); /* Responsive font size with a larger max size */
-                color: #fff; /* White text color */
-                font-weight: bold; /* Make the text bold */
-                margin-bottom: 10px; /* Margin below the logo */
-                text-align: center; /* Center the logo text */
-            }
-
-            /* Navigation styling */
-            nav {
-                display: flex; /* Enables flexbox layout for the navigation */
-                justify-content: center; /* Center items horizontally */
-                width: 100%; /* Full width for navigation items */
+                flex-direction: column;
+                width: 95%;
+                top: 10px;
+                padding: 15px 20px;
             }
 
             nav ul {
-                list-style: none; /* Removes bullet points from the list */
-                display: flex; /* Displays the list items in a row */
-                padding: 0; /* Removes padding from the list */
-                flex-wrap: nowrap; /* Prevents wrapping of list items */
-                justify-content: center; /* Centers the links */
-            }
-
-            nav ul li {
-                margin: 0 15px; /* Margin between navigation items */
-                text-align: right; /* Aligns text to the right */
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 10px;
             }
 
             nav ul li a {
-                color: #fff; /* White text color for links */
-                text-decoration: none; /* Removes underline from links */
-                font-size: clamp(1em, 3vw, 1.5em); /* Responsive font size for links */
-            }
-
-            
-            header {
-                flex-direction: column; /* Stack items vertically on smaller screens */
-                align-items: center; /* Center items */
-            }
-
-            nav {
-                margin-top: 10px; /* Space above the navigation links */
-            }
-
-            nav ul {
-                flex-direction: row; /* Keep items side by side */
-                width: auto; /* Auto width for navigation items */
-                align-items: center; /* Center the navigation links */
-            }
-
-            nav ul li {
-                margin: 5px; /* Margin between navigation items */
+                font-size: clamp(1em, 3vw, 1.3em);
             }
         }
         /* Home section styling */
         #home {
-            min-height: 100vh; /* Full height of the viewport */
-            height: auto; /* Allows the height to adjust based on content */
-            background-image: url('Website Portfolio/Home.png'); /* Background image (replace with your image path) */
-            background-size: cover; /* Cover the entire section with the background image */
-            background-position: center; /* Center the background image */
-            flex: 1; /* Takes up one part of the flex layout */
-            display: flex; /* Enables flexbox layout */
-            flex-direction: column; /* Stacks children vertically */
-            justify-content: center; /* Centers content vertically */
-            align-items: center; /* Centers content horizontally */
-            text-align: center; /* Center-aligns text */
-            position: relative; /* Positions the section relative to its normal position */
+            min-height: 100vh;
+            background-image: url('Website Portfolio/Home.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
         }
 
-        /* Customizable styles for text elements */
-        
-        
+        .home-content {
+            background: rgba(255, 255, 255, 0.25); /* Light semi-transparent background */
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            max-width: 1200px;
+        }
+
         .home-title {
-            font-family: 'Arial Narrow Bold';
-            font-size: clamp(2em, 6vw, 6em); /* Responsive font size with min and max */
-            color: rgb(58, 58, 58);
-            text-align: center; /* Center the title */
+            font-family: 'Arial Narrow Bold', sans-serif;
+            font-size: clamp(2.5em, 6vw, 6em);
+            color: #3a3a3a;
+            margin-bottom: 15px;
         }
 
         .home-subtitle {
-            font-family: 'Arial';
-            font-size: clamp(1.5em, 3.5vw, 3em); /* Responsive font size with min and max */
-            color: rgb(58, 58, 58);
-            text-align: center; /* Center the subtitle */
+            font-family: 'Arial', sans-serif;
+            font-size: clamp(1.5em, 3.5vw, 3em);
+            color: #3a3a3a;
+            margin-bottom: 20px;
         }
 
         .separator {
-            background-color: rgb(58, 58, 58);
-            height: 2px; /* Consistent height for the separator */
-            width: 50%; /* Width of the separator */
-            margin: 20px auto; /* Center the separator */
+            background-color: #3a3a3a;
+            height: 3px;
+            width: 60px;
+            margin: 20px auto;
+            border-radius: 2px;
         }
 
-        #home p {
-            font-family: 'Arial';
-            font-size: clamp(1em, 2vw, 1.5em); /* Responsive font size with min and max */
-            color: rgb(49, 49, 49);
-            text-align: center; /* Center the paragraph text */
-            margin: 0 10%; /* Add some margin for smaller screens */
+        .home-description {
+            font-family: 'Arial', sans-serif;
+            font-size: clamp(1em, 2vw, 1.5em);
+            color: #313131;
+            margin: 20px 0;
+            line-height: 1.6;
         }
 
-        .arrow {
-            width: 5%; /* Maintain size for larger screens */
-            height: auto; /* Maintain aspect ratio */
-            display: block; /* Center the image */
-            margin: 20px auto; /* Center the arrow */
+        .scroll-arrow img {
+            width: 50px;
+            height: auto;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
         }
 
+        .scroll-arrow img:hover {
+            transform: translateY(10px);
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .arrow {
-                width: 10%; /* Adjust arrow size for smaller screens */
-            }
-        }
-        /* About section styling */
-        #about {
-        display: flex; /* Enables flexbox layout */
-        flex-wrap: wrap; /* Allows items to wrap onto the next line */
-        justify-content: center; /* Centers content horizontally */
-        align-items: center; /* Aligns items at the start */
-        vertical-align: middle; /* Aligns items vertically */
-        padding: 20px; /* Padding around the section */
-        }
-
-        .left {
-            background-color: rgb(241, 241, 241); /* Light grey background */
-            flex: 1; /* Takes up one part of the flex layout */
-            padding: 20px; /* Padding around the content */
-            display: flex; /* Enables flexbox layout */
-            flex-direction: column; /* Stacks items vertically */
-            justify-content: center; /* Centers content vertically */
-            align-items: center; /* Centers content horizontally */
-            text-align: center; /* Center-aligns text */
-            vertical-align: middle; /* Aligns items vertically */
-        }
-        .right {
-            background-color: white; /* White background */
-            flex: 1; /* Takes up one part of the flex layout */
-            padding: 60px; /* Padding around the content */
-            display: flex; /* Enables flexbox layout */
-            flex-direction: column; /* Stacks items vertically */
-            justify-content: center; /* Centers content vertically */
-        }
-
-        .left h1, .left p, .right h2, .right p {
-            font-family: 'Arial'; /* Font family */
-            color: rgb(58, 58, 58); /* Text color */
-        }
-
-        .left h1 {
-            font-size: clamp(2em, 5vw, 2.5em); /* Responsive size with min and max */
-        }
-
-        .left p {
-            font-size: clamp(1em, 3vw, 1.5em); /* Responsive size with min and max */
-        }
-
-        .right h2 {
-            font-size: clamp(3em, 6vw, 4.5em); /* Responsive size with min and max */
-            margin-bottom: 20px; /* Margin below title */
-        }
-
-        .right p {
-            font-size: clamp(1em, 3vw, 1.5em); /* Responsive size with min and max */
-            color: grey; /* Grey color for paragraph text */
-            margin-bottom: 10px; /* Margin below paragraphs */
-        }
-
-        .icons {
-            display: flex; /* Enables flexbox layout */
-            flex-direction: column; /* Stacks icons vertically */
-            margin-top: 20px; /* Margin above the icons */
-            align-items: center; /* Centers icons horizontally */
-        }
-
-        .icons img {
-            width: 50px; /* Width of the icon images */
-            height: 50px; /* Height of the icon images */
-            margin: 5px 0; /* Margin above and below icons */
-            cursor: pointer; /* Changes cursor to pointer on hover */
-        }
-
-        @media (max-width: 768px) {
-            #about {
-                flex-direction: column; /* Stacks columns vertically on smaller screens */
+            .home-content {
+                padding: 30px 20px;
             }
 
-            .left, .right {
-                align-self: center; /* Center each column */
-                text-align: center; /* Center text for smaller screens */
+            .home-title {
+                font-size: clamp(2em, 7vw, 4em);
+            }
+
+            .home-subtitle {
+                font-size: clamp(1.2em, 5vw, 2.5em);
+            }
+
+            .separator {
+                width: 40px;
+            }
+        }
+
+        /* ABOUT SECTION */
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* CARD BASE STYLE */
+        .about-card {
+            background-color: #fff;
+            border-radius: 25px;
+            padding: 40px 30px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* TOP CARD */
+        .about-top h1 {
+            font-size: clamp(2em, 5vw, 3em);
+            margin-bottom: 10px;
+        }
+
+        .about-top p {
+            font-size: clamp(1.2em, 2.5vw, 1.5em);
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        /* ACTIONS: SOCIAL + EMAIL */
+        .about-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        /* EMAIL ICON + TOOLTIP */
+        .about-email {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .about-email img {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.2s;
+        }
+
+        .about-email img:hover {
+            transform: scale(1.1);
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #222;
+            color: #fff;
+            padding: 8px 14px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        /* Show tooltip when active */
+        .tooltip.show {
+            opacity: 1;
+            pointer-events: auto; /* make it clickable */
+        }
+
+        /* SOCIAL ICONS */
+        .about-social {
+            display: flex;
+            gap: 20px;
+        }
+
+        .about-social img {
+            width: 45px;
+            height: 45px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .about-social img:hover {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+        }
+
+        /* BOTTOM CARD */
+        .about-bottom h2 {
+            font-size: clamp(2em, 5vw, 2.8em);
+            margin-bottom: 20px;
+        }
+
+        .about-bottom p {
+            font-size: clamp(1em, 2.5vw, 1.4em);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .about-card {
+                padding: 30px 20px;
             }
         }
 
@@ -287,173 +321,170 @@
             gap: var(--icon-spacing); /* Uses the variable to set spacing */
         }
 
-        /* Skills section styling */
-        #skills {
-            min-height: 100vh; /* Full height of the viewport */
-            height: auto; /* Allows the height to adjust based on content */
-            background-color: rgb(241, 241, 241); /* Light grey background */
-            flex: 1; /* Takes up one part of the flex layout */
-            display: flex; /* Enables flexbox layout */
-            flex-direction: column; /* Stacks items vertically */
-            align-items: center; /* Centers items horizontally */
-            justify-content: center; /* Centers items vertically */
-            text-align: center; /* Center-aligns text */
+        /* ----------------------------- */
+        /* SKILLS SECTION (LIGHT MODE) */
+        /* ----------------------------- */
+        /* Section title */
+        #skills{
+            min-height: 60vh; /* Minimum height of the portfolio section */
+            background-color: #f4f4f4; /* background for the portfolio section */
+        }
+        .skills-title {
+            text-align: center; /* Center the title */
+            font-size: 3em; /* Big title */
+            margin-bottom: 50px; /* Space below title */
+            color: #3a3a3a; /* Dark grey text */
         }
 
-        #skills h2 {
-            font-size: 3em; /* Large font size */
-            color: rgb(58, 58, 58); /* Text color */
-            margin-bottom: 0px; /* Margin below title */
+        /* Grid layout */
+        .skills-grid {
+            display: grid; /* Use CSS grid */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 columns on wide screens, auto adjust */
+            gap: 30px; /* Space between cards */
+            padding: 0 50px; /* Side padding */
         }
 
-        .skills-separator {
-            height: var(--skills-separator-height); /* Adjustable height of the separator line */
-            background-color: lightgrey; /* Color of the separator line */
-            width: 50%; /* Width of the separator line */
-            margin: 0px auto; /* Center the separator line with increased margin */
+        /* Skill card */
+        .skill-card {
+            background: rgba(255, 255, 255, 0.15); /* Glass effect */
+            backdrop-filter: blur(10px); /* Blur behind card */
+            border-radius: 20px; /* Rounded corners */
+            padding: 30px 20px; /* Inner spacing */
+            text-align: center; /* Center content */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Soft shadow */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover */
         }
 
-        .icon-container {
-        display: flex;
-        gap: var(--icon-spacing);
-        flex-wrap: wrap; /* Allow items to wrap onto the next line */
-        justify-content: center; /* Center content horizontally */
+        /* Hover effect */
+        .skill-card:hover {
+            transform: translateY(-10px); /* Slight lift */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* Stronger shadow */
         }
 
-        .skill {
-            flex: 1; /* Allow items to grow and shrink */
-            padding: 20px; /* Padding around each skill */
-            min-width: 250px; /* Minimum width for each skill card */
-            text-align: center; /* Center-align text */
+        /* Icon styling */
+        .skill-icon img {
+            width: 80px; /* Icon size */
+            height: 80px;
+            margin-bottom: 15px; /* Space below icon */
+            transition: transform 0.3s; /* Smooth hover */
         }
 
-        @media (max-width: 768px) {
-            .icon-container {
-                flex-direction: column; /* Stack items vertically on smaller screens */
-                align-items: center; /* Center items */
-            }
-        }
-        .skill h3 {
-            font-size: 2em; /* Medium font size for subtitles */
-            color: rgb(58, 58, 58); /* Text color */
-            margin-bottom: 10px; /* Margin below subtitle */
+        .skill-card:hover .skill-icon img {
+            transform: scale(1.15); /* Slight zoom on hover */
         }
 
-        .skill p {
-            font-size: 1.5em; /* Small font size for description */
-            color: black; /* Black color for description text */
+        /* Card heading */
+        .skill-card h3 {
+            font-size: 1.5em; /* Heading size */
+            margin-bottom: 15px;
+            color: #222; /* Dark text */
         }
 
-        /* Skill image styling */
-        .skill img {
-            width: 40px; /* Width of the image above the subtitle */
-            height: 40px; /* Height of the image above the subtitle */
-            margin-bottom: 10px; /* Space between the image and subtitle */
+        /* Bullet points */
+        .skill-card ul {
+            list-style: disc; /* Bullet style */
+            text-align: left; /* Left align bullets */
+            padding-left: 20px; /* Space from edge */
+            color: #333; /* Bullet text color */
+            font-size: 1em; /* Bullet font size */
+            line-height: 1.6;
         }
 
-        /* Portfolio section styling */
-        #portfolio {
-        min-height: 100vh; /* Minimum height of the portfolio section */
-        background-color: white; /* White background for the portfolio section */
-        display: flex; /* Enables flexbox layout */
-        flex-direction: column; /* Stacks items vertically */
-        align-items: center; /* Centers items horizontally */
-        justify-content: flex-start; /* Aligns items to the start */
-        padding: 40px; /* Padding around the content */
+        #portfolio { padding: 60px 20px; text-align: center; background-color: #f9f9f9; }
+        .skills-title { font-size: clamp(2em,5vw,3em); margin-bottom: 40px; color: #3a3a3a; }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
         }
 
-        #portfolio h2 {
-            font-family: 'Arial'; /* Portfolio title font */
-            font-size: clamp(2em, 6vw, 3em); /* Responsive font size for title */
-            color: rgb(58, 58, 58); /* Portfolio title color */
-            margin-bottom: 10px; /* Margin below title */
+        /* Card styling */
+        .portfolio-card {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            width: 100%;
+            max-width: 350px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .portfolio-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        .portfolio-image img, .portfolio-video video {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 15px;
         }
 
-        .portfolio-separator {
-            height: 2px; /* Adjustable height of the separator line */
-            background-color: rgb(58, 58, 58); /* Color of the separator line */
-            width: 50%; /* Width of the separator line */
-            margin: 10px auto; /* Center the separator line */
+        .portfolio-card h3 { margin-bottom: 10px; color: #333; }
+
+        /* Expanded modal */
+        #portfolio-expanded {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 90%;
+            max-width: 900px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 30px;
+            z-index: 1000;
+            transition: transform 0.5s ease;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+        #portfolio-expanded.active { transform: translate(-50%, -50%) scale(1); }
+
+        #portfolio-expanded video {
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 20px;
         }
 
-        .portfolio-video {
-            width: 80%; /* Adjustable video width */
-            height: auto; /* Adjust height responsively */
-            max-height: 500px; /* Maximum height for videos */
-            margin-top: 20px; /* Margin above the video */
+        #expanded-gifs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        #expanded-gifs img { width: 150px; border-radius: 15px; }
+
+        #expanded-title { margin-bottom: 15px; font-size: 2em; color: #222; }
+        #expanded-description { text-align: left; }
+
+        /* Close button for expanded portfolio modal */
+        #close-expanded {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(228, 228, 228, 0.46); /* Bright red */
+            color: #3a3a3a;
+            font-size: 2.5rem; /* Bigger X */
+            font-weight: bold;
+            width: 60px;  /* Fixed width */
+            height: 60px; /* Fixed height, same as width */
+            border: none;
+            border-radius: 50%; /* Perfect circle */
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1010;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.2s ease, transform 0.2s ease;
         }
 
-        .portfolio-gifs {
-            display: flex; /* Enables flexbox layout for GIFs */
-            gap: 20px; /* Adjustable spacing between GIFs */
-            margin: 20px 0; /* Margin above and below GIFs */
-            flex-wrap: wrap; /* Allow wrapping of GIFs */
+        /* Hover effect */
+        #close-expanded:hover {
+            background: rgb(198, 198, 198);
+            transform: scale(1.15);
         }
 
-        .portfolio-gif {
-            width: 300px; /* Adjustable GIF size */
-            height: auto; /* Auto height for GIFs */
-        }
-
-        .portfolio-subtitle {
-            font-family: 'Arial'; /* Portfolio subtitle font */
-            font-size: clamp(1.5em, 5vw, 2.5em); /* Responsive font size for subtitle */
-            color: rgb(58, 58, 58); /* Portfolio subtitle color */
-            margin-top: 20px; /* Margin above the subtitle */
-        }
-
-        .portfolio-description {
-            font-size: clamp(1em, 3vw, 1.5em); /* Responsive font size for description */
-            color: black; /* Black color for description text */
-            margin: 0 10%; /* Adaptive margins for smaller screens */
-            text-align: justify; /* Justify text for better readability */
-        }
-
-        /* Academic projects section styling */
-        .academic-project {
-            display: flex; /* Enables flexbox layout */
-            justify-content: space-between; /* Space between video and description */
-            margin-top: 20px; /* Margin above the academic project */
-            width: 80%; /* Width of the project section */
-            align-items: flex-start; /* Align items to the start */
-        }
-
-        .academic-project video {
-            width: 45%; /* Video width */
-            height: auto; /* Maintain aspect ratio */
-            max-height: 500px; /* Maximum height for videos */
-        }
-
-        .academic-project .description {
-            width: 50%; /* Width of the description */
-            padding-left: 20px; /* Space between video and description */
-        }
-
-        @media (max-width: 768px) {
-            .academic-project {
-                flex-direction: column; /* Stack video above description on smaller screens */
-                align-items: center; /* Center items */
-            }
-
-            .academic-project video {
-                width: 80%; /* Video width for smaller screens */
-                margin-bottom: 20px; /* Space below video */
-            }
-
-            .academic-project .description {
-                width: 100%; /* Full width for description */
-                padding-left: 0; /* Remove left padding */
-            }
-
-            .portfolio-gifs {
-                flex-direction: column; /* Stack GIFs vertically on smaller screens */
-                align-items: center; /* Center GIFs */
-            }
-
-            .portfolio-gif {
-                width: 80%; /* Width for GIFs on smaller screens */
-            }
-        }
 
         #contact {
         display: flex; /* Enables flexbox layout */
@@ -523,14 +554,14 @@
 
 <body>
     <header>
-        <div class="logo">Guilherme Cardoso</div> <!-- Logo or name displayed in the header -->
+        <div class="logo">Guilherme Cardoso</div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li> <!-- Link to Home section -->
-                <li><a href="#about">About</a></li> <!-- Link to About section -->
-                <li><a href="#skills">Skills</a></li> <!-- Link to Skills section -->
-                <li><a href="#portfolio">Portfolio</a></li> <!-- Link to Portfolio section -->
-                <li><a href="#contact">Contact</a></li> <!-- Link to Contact section -->
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -554,201 +585,410 @@
     </script>
 
     <section id="home">
-        <h1 class="home-title" style="font-family: 'Arial Narrow Bold'; font-size: clamp(2em, 6vw, 6em); color: rgb(58, 58, 58);">Guilherme Cardoso</h1> <!-- Main heading with your name -->
-        <h2 class="home-subtitle" style="font-family: 'Arial'; font-size: clamp(1.5em, 3.5vw, 3em); color: rgb(58, 58, 58);">Game Programmer</h2> <!-- Subtitle with your title -->
-        <div class="separator" style="background-color: rgb(58, 58, 58); height: 2px; width: 50%; margin: 20px auto;"></div> <!-- Horizontal separator line -->
-        <p style="font-family: 'Arial'; font-size: clamp(1em, 2vw, 1.5em); color: rgb(49, 49, 49);text-align: center; margin: 0 10%;">
-            I’m a hardworking, team-oriented game programmer specialized in Unreal Engine 5. 
-            <br> 
-            Passionate about creating Game Experiences.</p>
-        <img src="Website Portfolio/arrow.png" alt="Arrow Down" class="arrow" onclick="location.href='#about'"> <!-- Arrow image linking to About section -->
-    </section>
-
-    <section id="about">
-        <div class="left">
-            <div style="margin-top: 10px;"></div>
-            <h1 style="font-family: 'Arial'; font-size: clamp(2em, 5vw, 2.5em); color: rgb(58, 58, 58); text-align: center;">Guilherme Cardoso</h1> <!-- Name in the About section -->
-            <p style="font-family: 'Arial'; font-size: clamp(1em, 3vw, 1.5em); color: rgb(58, 58, 58); text-align: center;">Game Programmer</p> <!-- Title in the About section -->
-            <div class="icons">
-                <div>
-                    <img src="Website Portfolio/Email.png" alt="Email Icon" style="width: 50px; height: 50px"/>  <!-- Email icon -->
-                </div>
-                <p style="font-family: 'Arial'; font-size: clamp(1em, 3vw, 1.5em); color: rgb(58, 58, 58);">guilhermeb-cardoso@outlook.com</p> <!-- Email text -->
-                <div class="icon-container">
-                    <a href="https://github.com/guilhermeb-cardoso" target="_blank"><img src="Website Portfolio/github.png" alt="GitHub" style="width: 50px; height: 50px;"></a> <!-- GitHub icon -->
-                    <a href="https://drive.google.com/file/d/1sVwvNNRD4uO9JU8hjmzG5zDLc0CQg6GO/view" target="_blank"><img src="Website Portfolio/CV.png" alt="CV" style="width: 50px; height: 50px;"></a> <!-- CV icon -->
-                    <a href="https://www.linkedin.com/in/guilhermeb-cardoso/" target="_blank"><img src="Website Portfolio/linkedin.png" alt="LinkedIn" style="width: 50px; height: 50px;"></a> <!-- LinkedIn icon -->
-                </div>
+        <div class="home-content">
+            <h1 class="home-title">Guilherme Cardoso</h1>
+            <p class="home-subtitle"> Game Programmer</p>
+            <div class="separator"></div>
+            <p class="home-description">
+                Team-focused game programmer specializing in Unreal Engine 5.
+            </p>
+            <div class="scroll-arrow">
+                <a href="#about">
+                    <img src="Website Portfolio/arrow.png" alt="Arrow Down" class="arrow" onclick="location.href='#about'"> 
+                    <!-- Arrow image linking to About section -->
+                </a>
             </div>
         </div>
-        <div class="right">
-            <h2 style="font-family: 'Arial Narrow Bold'; font-size: clamp(3em, 6vw, 4.5em); color: rgb(58, 58, 58);">About Me</h2> <!-- Title for the About Me section -->
-            <p style="font-family: 'Arial'; font-size: clamp(1em, 3vw, 1.5em); color: grey;">I'm an ambitious and hardworking Unreal Engine Game Programmer with a passion for creating games. Educated in Unreal Engine Programming and Game Design, I strive to learn new things everyday.</p>
-            <p style="font-family: 'Arial'; font-size: clamp(1em, 3vw, 1.5em); color: grey;">My goal is to make great games. Games that are enjoyable, immersive, story-rich, and unforgettable.</p>
-            <p style="font-family: 'Arial'; font-size: clamp(1em, 3vw, 1.5em); color: grey;">I truly enjoy learning new things, whether it's a new language or exploring game development and coding.</p>
+    </section>
+    
+    <section id="about">
+        <div class="about-container">
+            <!-- TOP CARD: NAME & SOCIAL -->
+            <div class="about-card about-top">
+                <h1>Guilherme Cardoso</h1>
+                <p>Contact</p>
+
+                <div class="about-actions">
+                    <!-- Email icon with tooltip -->
+                    <div class="about-email" id="emailCard">
+                        <img src="Website Portfolio/Email.png" alt="Email Icon" id="emailIcon">
+                        <span class="tooltip" id="emailTooltip">guilhermeb-cardoso@outlook.com</span>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="about-social">
+                        <a href="https://github.com/guilhermeb-cardoso" target="_blank">
+                            <img src="Website Portfolio/github.png" alt="GitHub">
+                        </a>
+                        <a href="https://drive.google.com/file/d/1sVwvNNRD4uO9JU8hjmzG5zDLc0CQg6GO/view" target="_blank">
+                            <img src="Website Portfolio/CV.png" alt="CV">
+                        </a>
+                        <a href="https://www.linkedin.com/in/guilhermeb-cardoso/" target="_blank">
+                            <img src="Website Portfolio/linkedin.png" alt="LinkedIn">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTTOM CARD: ABOUT TEXT -->
+            <div class="about-card about-bottom">
+                <h2>About Me</h2>
+                <p>
+                    I'm an ambitious and hardworking Unreal Engine Game Programmer with a passion for creating games.
+                    I strive to learn new things every day and enjoy crafting enjoyable, immersive, and unforgettable experiences.
+                </p>
+                <p>
+                    Whether exploring new coding techniques or improving my game design skills, I always aim for growth.
+                </p>
+            </div>
         </div>
     </section>
+    
+    <script>
+        const emailCard = document.getElementById('emailCard');
+        const emailTooltip = document.getElementById('emailTooltip');
+
+        emailCard.addEventListener('click', () => {
+            emailTooltip.classList.toggle('show');
+            if (emailTooltip.classList.contains('show')) {
+                // Copy email to clipboard
+                navigator.clipboard.writeText(emailTooltip.textContent)
+                    .then(() => {
+                        emailTooltip.textContent = 'Copied!';
+                        setTimeout(() => {
+                            emailTooltip.textContent = 'guilhermeb-cardoso@outlook.com';
+                        }, 1500);
+                    })
+                    .catch(err => console.error('Failed to copy email: ', err));
+            }
+        });
+    </script>
+
+
 
     <section id="skills">
-        <h2 style="font-family: 'Arial Narrow Bold'; color: rgb(58, 58, 58);">My Skills</h2> <!-- Skills title -->
-        <div class="skills-separator" style="background-color: rgb(58, 58, 58); width: 10%; height: 3.5px; margin: 0px auto;"></div> <!-- Fixed height of the separator line -->
-        <div style="margin-top: 100px;"> <!-- Increased spacing between the separator and the icons -->
-            <div class="icon-container" style="margin: 0px 5%;"> <!-- Centered icons -->
-                <div class="skill">
-                    <img src="Website Portfolio/programming.png" alt="Programming Icon" style="width: 150px; height: 150px;"> <!-- Image above subtitle -->
-                    <h3 style="font-size: 2em; color: rgb(58, 58, 58);">Programming</h3> <!-- Programming subtitle -->
-                    <p style="font-size: 1.5em; color: black;">
-                        Proficient in C++ and C#. <br>
-                        Experienced in Unreal Engine Blueprint. <br>
-                        Knowledgeable in Object-Oriented Programming. <br>
-                        Strives to write clean and elegant code.
-                    </p>
+        <h2 class="skills-title">Skills & Tools</h2>
+
+        <div class="skills-grid">
+            <!-- Programming Card -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="Website Portfolio/programming.png" alt="Programming Icon">
                 </div>
-                <div class="skill">
-                    <img src="Website Portfolio/game-development.png" alt="Game Development Icon" style="width: 150px; height: 150px;"> <!-- Image above subtitle -->
-                    <h3 style="font-size: 2em; color: rgb(58, 58, 58);">Game Development</h3> <!-- Game Development subtitle -->
-                    <p style="font-size: 1.5em; color: black;">
-                        Able to quickly prototype. <br>
-                        General understanding of gameplay systems. <br>
-                        Experienced with Unreal Engine. <br>
-                        Knowledgeable in Unity Engine.
-                    </p>
+                <h3>Programming</h3>
+                <ul>
+                    <li>C++ (Unreal Engine, OOP, memory management)</li>
+                    <li>C# (Unity, scripting, gameplay logic)</li>
+                    <li>Blueprint Visual Scripting (UE5, rapid prototyping)</li>
+                    <li>Clean, modular, reusable code practices</li>
+                </ul>
+            </div>
+
+            <!-- Game Development Card -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="Website Portfolio/game-development.png" alt="Game Development Icon">
                 </div>
-                <div class="skill">
-                    <img src="Website Portfolio/software.png" alt="Software Icon" style="width: 150px; height: 150px;"> <!-- Image above subtitle -->
-                    <h3 style="font-size: 2em; color: rgb(58, 58, 58);">Softwares</h3> <!-- Softwares subtitle -->
-                    <p style="font-size: 1.5em; color: black;">
-                        Experienced in Visual Studio, Visual Studio Code for Unity, and JetBrains Rider for Unreal Engine. <br>
-                        Proficient in Git/GitHub for version control and Jira for project management.
-                    </p>
+                <h3>Game Development</h3>
+                <ul>
+                    <li>Unreal Engine 5 (Blueprint & C++)</li>
+                    <li>Gameplay Ability System (GAS)</li>
+                    <li>Multiplayer & networking (replication, client-server)</li>
+                    <li>AI / Behavior Trees / EQS</li>
+                    <li>UI/UMG (Unreal Motion Graphics)</li>
+                </ul>
+            </div>
+
+            <!-- Tools & Workflow Card -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="Website Portfolio/software.png" alt="Tools Icon">
                 </div>
+                <h3>Tools & Workflow</h3>
+                <ul>
+                    <li>Git / GitHub / Git LFS</li>
+                    <li>Jira / Project management</li>
+                    <li>Visual Studio / Rider IDEs</li>
+                    <li>Profiling, debugging, optimization</li>
+                </ul>
+            </div>
+
+            <!-- Soft Skills Card -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="Website Portfolio/soft-skills.png" alt="Soft Skills Icon">
+                </div>
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Team collaboration & communication</li>
+                    <li>Problem-solving & critical thinking</li>
+                    <li>Adaptability & fast learning</li>
+                    <li>Time management & organization</li>
+                    <li>Mentoring & knowledge sharing</li>
+                </ul>
             </div>
         </div>
     </section>
+
 
     <section id="portfolio">
-        <h2 style="font-family: 'Arial Narrow Bold'; color: rgb(58, 58, 58);">Portfolio</h2>
-        <div class="portfolio-separator" style="background-color: rgb(58, 58, 58); width: 10%; height: 3.5px; margin: 0px auto;"></div>
-    
-        <video class="portfolio-video" controls>
-            <source src="Website Portfolio/Jak Mars Trailer.mp4" type="video/mp4"> <!-- Replace with your video file -->
-            Your browser does not support the video tag.
-        </video>
-    
-        <div class="portfolio-gifs">
-            <img src="Website Portfolio/JakMarsStartMenuGIF.gif" alt="GIF 1" class="portfolio-gif"> <!-- GIF 1 -->
-            <img src="Website Portfolio/JakMarsInGameMenuGIF.gif" alt="GIF 2" class="portfolio-gif"> <!-- GIF 2 -->
-            <img src="Website Portfolio/JakMarsGameOverMenuGIF.gif" alt="GIF 3" class="portfolio-gif"> <!-- GIF 3 -->
-        </div>
-    
-        <h3 class="portfolio-subtitle" style="font-family: 'Arial Narrow Bold'; color: rgb(58, 58, 58);">Jak Mars</h3>
-        <p class="portfolio-description">
-            During my course's final project, I developed a comprehensive game titled "Jak Mars." This project involved several key components and systems that I meticulously designed and implemented:
-        </p>
-    
-        <ul class="portfolio-description">
-            <li><strong>Functional Systems:</strong> I built a fully functional Main Menu, Pause, Quit Game, and Game Over systems, ensuring a seamless user experience from start to finish.</li>
-            <li><strong>Level Design:</strong> I designed and implemented a detailed level that included landscape, foliage, materials, and static meshes, creating an immersive environment for players.</li>
-            <li><strong>Interactive Objects:</strong> I created various interactive objects to enhance player engagement and interactivity within the game world.</li>
-            <li><strong>Enemy AI Integration:</strong> I integrated multiple enemy AI entities using a shared AI system, providing dynamic and challenging gameplay experiences.</li>
-            <li><strong>Gameplay Mechanics:</strong> I developed intricate gameplay mechanics for character movements and abilities, ensuring smooth and responsive controls.</li>
-            <li><strong>User Interface (UI):</strong> I programmed and implemented user interface elements, including health bars, gun ammunition, and in-game menus, to provide clear and intuitive feedback to players.</li>
-            <li><strong>Sound Design:</strong> I incorporated sound effects and background music to enhance the game's atmosphere and create an immersive audio experience.</li>
-        </ul>
-    
-        <p class="portfolio-description">
-            This project allowed me to apply and expand my skills in game development, from designing engaging levels to implementing complex systems and mechanics. It was a valuable experience that showcased my ability to create a cohesive and enjoyable gaming experience.
-        </p>
-    
-        <div class="portfolio-separator"></div>
-    
-        <video class="portfolio-video" controls>
-            <source src="Website Portfolio/GoldenTaco Trailer.mp4" type="video/mp4"> <!-- Replace with your video file -->
-            Your browser does not support the video tag.
-        </video>
-    
-        <div class="portfolio-gifs">
-            <img src="Website Portfolio/GoldenTacoStartMenuGIF.gif" alt="GIF 1" class="portfolio-gif"> <!-- GIF 1 -->
-            <img src="Website Portfolio/GoldenTacoInGameMenuGIF.gif" alt="GIF 2" class="portfolio-gif"> <!-- GIF 2 -->
-            <img src="Website Portfolio/GoldenTacoGameOverMenuGIF.gif" alt="GIF 3" class="portfolio-gif"> <!-- GIF 3 -->
-        </div>
-    
-        <h3 class="portfolio-subtitle" style="font-family: 'Arial Narrow Bold'; color: rgb(58, 58, 58);">Golden Taco</h3>
-        <p class="portfolio-description">
-            Embark on a quest for the mythical golden taco in this platformer fantasy first-person shooter game. Experience the nostalgia of retro pixel graphics as you face various challenges and foes on your journey. Will you find the ultimate prize or fall victim to the dangers of the taco world?
-            <br><br>
-            This project was originally developed for the Global Game Jam 2024 and finished in under 48 hours.
-            <br><br>
-            During the Global Game Jam, I worked on an exciting project titled "Golden Taco." This project involved several key components and systems that I designed and implemented:
-        </p>
-    
-        <ul class="portfolio-description">
-            <li><strong>Gameplay Mechanics:</strong> I developed gameplay mechanics using Input Mapping Context and Input Actions, ensuring responsive and engaging player controls.</li>
-            <li><strong>Level Design:</strong> I designed and implemented a detailed level, creating an immersive environment for players to explore.</li>
-            <li><strong>Functional Systems:</strong> I built a fully functional Main Menu, Pause, Quit Game, and Game Over systems, providing a seamless user experience.</li>
-            <li><strong>User Interface (UI):</strong> I programmed and implemented user interface elements, including menus and in-game displays, to provide clear and intuitive feedback to players.</li>
-        </ul>
-    
-        <p class="portfolio-description">
-            This project gave me the chance to dive deep into game development, from crafting exciting levels to bringing systems and mechanics to life. It was a rewarding experience that highlighted my knack for creating a seamless and enjoyable gaming adventure in a short span of time.
-        </p>
-    
-        <div class="portfolio-separator"></div>
-    
-        <!-- Academic Projects Section -->
-        <h2 style="font-family: 'Arial Narrow Bold'; font-size: clamp(2em, 6vw, 3em); color: rgb(58, 58, 58);">Academic Projects</h2>
-        <div class="portfolio-separator" style="background-color: rgb(58, 58, 58); width: 10%; height: 3.5px; margin: 0px auto;"></div>
-    
-        <h3 style="font-family: 'Arial Narrow Bold'; font-size: clamp(1.5em, 5vw, 2.5em); color: rgb(58, 58, 58);">Unreal Engine Programming</h3>
-        
-        <div class="academic-project">
-            <video class="portfolio-video" controls>
-                <source src="Website Portfolio/UEProgramming.mp4" type="video/mp4"> <!-- Replace with your video file -->
-                Your browser does not support the video tag.
-            </video>
-    
-            <div class="description">
-                <p style="font-size: clamp(1em, 3vw, 1.5em); color: black; text-align: justify;">
-                    In this course, I was able to learn and practice various aspects of Unreal Engine. It taught me the fundamentals of each aspect of Unreal.
-                    <br>
-                    The modules include:
-                </p>
-                <ul style="font-size: clamp(1em, 3vw, 1.5em); color: black; padding-left: 20px;">
-                    <li>Levels</li>
-                    <li>Blueprint and C++</li>
-                    <li>Gameplay</li>
-                    <li>Game Aesthetics</li>
-                </ul>
-                <br>
-                <p style="font-size: clamp(1em, 3vw, 1.5em); color: black; text-align: justify;">
-                    This video showcases some of the exercises I completed for this course.
-                </p>
+        <h2 class="skills-title">Portfolio</h2>
+
+        <div class="portfolio-grid">
+            <!-- Jak Mars Project -->
+            <div class="portfolio-card" data-title="Jak Mars" data-description="
+            <h3>Jak Mars</h3>
+            <p>
+                <em>Jak Mars</em> was my solo project for my final project of the Unreal Engine Programming Course where I focused on building a complete third-person action adventure in Unreal Engine 5. 
+                The main challenge was creating scalable gameplay systems using Blueprint architecture, while also delivering responsive combat, AI, 
+                and a functional user interface.
+            </p>
+            <ul>
+                <li>Implemented AI with <strong>Behavior Trees & Blackboards</strong> for dynamic decision-making.</li>
+                <li>Developed modular gameplay mechanics with a <strong>Blueprint approach</strong>.</li>
+                <li>Integrated <strong>UMG UI</strong>: HUDs, menus, health bars, and overlays.</li>
+                <li>Built environments with <strong>Nanite meshes and Lumen lighting, and foliage</strong>.</li>
+                <li>Designed adaptive audio using <strong>Unreal Audio Engine</strong> with spatialized SFX and event-driven music.</li>
+            </ul>
+        " data-gifs='["Website Portfolio/JakMarsStartMenuGIF.gif","Website Portfolio/JakMarsInGameMenuGIF.gif","Website Portfolio/JakMarsGameOverMenuGIF.gif"]'>
+                <div class="portfolio-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="Website Portfolio/Jak Mars Trailer.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h3>Jak Mars</h3>
             </div>
-        </div>
-    
-        <div class="portfolio-separator"></div>
-    
-        <!-- Game Design Section -->
-        <h3 style="font-family: 'Arial Narrow Bold'; font-size: clamp(2em, 6vw, 3em); color: rgb(58, 58, 58);">Game Design</h3>
-    
-        <div class="academic-project">
-            <div class="description">
-                <p style="font-size: clamp(1em, 3vw, 1.5em); color: black; text-align: justify;">
-                    During this course, I immersed myself in various aspects of Game Design, gaining hands-on experience and mastering the fundamentals of each element.
-                    <br>
-                    The Game Design Modules covered:
+
+            <!-- Golden Taco Project -->
+            <div class="portfolio-card" data-title="Golden Taco" data-description="
+           </div>
+                <h3>Golden Taco</h3>
+                <p>
+                    <em>Golden Taco</em> was created during the <strong>Global Game Jam</strong> in a 48-hour sprint with a small multidisciplinary team. 
+                    The project emphasized rapid prototyping under strict time constraints, requiring quick technical decisions and effective collaboration. 
+                    My primary responsibilities were gameplay programming and input systems, alongside integrating UI/UX elements to deliver a complete vertical slice.
                 </p>
-                <ul style="font-size: clamp(1em, 3vw, 1.5em); color: black; padding-left: 20px;">
-                    <li>Narrative Design</li>
-                    <li>Environment and Character Design</li>
-                    <li>Level Design and Workflow</li>
-                    <li>Introduction to modeling in Blender</li>
+                <ul>
+                    <li>Implemented player controls using the <strong>Enhanced Input System</strong> for modular bindings and adaptability.</li>
+                    <li>Developed responsive <strong>UMG menus and in-game HUDs</strong> within the jam timeframe.</li>
+                    <li>Handled <strong>GameMode and PlayerController logic</strong> for seamless state transitions (pause, restart, game-over).</li>
+                    <li>Collaborated with artists and designers to optimize levels using <strong>dynamic materials, LODs, and efficient asset workflows</strong>.</li>
                 </ul>
             </div>
-                <img src="Website Portfolio/GameDesign.png" alt="Game Design" style="width: 45%; height: auto; max-height: 500px;"/> <!-- Small image for Game Design -->
+        " data-gifs='["Website Portfolio/GoldenTacoStartMenuGIF.gif","Website Portfolio/GoldenTacoInGameMenuGIF.gif","Website Portfolio/GoldenTacoGameOverMenuGIF.gif"]'>
+                <div class="portfolio-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="Website Portfolio/GoldenTaco Trailer.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h3>Golden Taco</h3>
             </div>
+
+            <!-- Unreal Engine Programming -->
+            <div class="portfolio-card" data-title="Unreal Engine Programming" data-description="
+            </div>
+                <h3>Unreal Engine Programming</h3>
+                <p>
+                    This project was part of an intensive program at <strong>Tokio New Technology School</strong>, guided by industry professional Diony Costa. 
+                    The focus was on mastering <strong>Unreal Engine 5 programming</strong> through a project-based approach, tackling both Blueprint scripting and C++ integrations. 
+                    Each exercise was designed to simulate a real production pipeline, emphasizing gameplay systems, UI programming, and technical optimization.
+                </p>
+                <ul>
+                    <li>Engine proficiency in <strong>Blueprint & C++</strong> hybrid programming.</li>
+                    <li>Programmed <strong>UI, Menus, and Interfaces</strong> with full UMG implementation.</li>
+                    <li>Developed <strong>enemy AI</strong> via Behavior Trees and controlled gameplay loops.</li>
+                    <li>Implemented <strong>collisions, physics interactions, sound cues, and dynamic lighting</strong>.</li>
+                    <li>Created <strong>Niagara VFX</strong> and cinematic sequences with Sequencer.</li>
+                    <li>Worked on <strong>Camera systems, Pawns, Animation Blueprints, and Widget-driven HUDs</strong>.</li>
+                </ul>
+            </div>
+        " data-gifs='[""]'>
+                <div class="portfolio-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="Website Portfolio/UEProgramming.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h3>Unreal Engine Programming</h3>
+            </div>
+
+            <!-- Game Design -->
+            <div class="portfolio-card" data-title="Game Design Foundations" data-description="
+                    <h3>Game Design Foundations</h3>
+                    <p>
+                        Alongside programming, I undertook a dedicated course in <strong>Game Design</strong>, 
+                        where I explored the creative and structural aspects of video game development. 
+                        The curriculum combined theory with practice, from building 
+                        <strong>Game Design Documents (GDDs)</strong> to modeling in Blender and creating early-stage prototypes. 
+                        The training emphasized how to balance narrative, mechanics, and player experience within a coherent production framework.
+                    </p>
+                    <ul>
+                        <li>Studied <strong>Narrative Design, Level Design, Environment & Character Design</strong>.</li>
+                        <li>Developed <strong>flowcharts and GDDs</strong> for structured design documentation.</li>
+                        <li>Modeled basic assets in <strong>Blender</strong> for early-level prototyping.</li>
+                        <li>Explored <strong>game rules, dynamics, genres, platforms, and player types</strong>.</li>
+                        <li>Compared <strong>Unity and Unreal</strong> from a designer’s perspective.</li>
+                        <li>Analyzed <strong>game industry history and aesthetics</strong> to contextualize modern design.</li>
+                    </ul>
+                 "
+                 data-gifs='[""]'>
+
+                <div class="portfolio-image">
+                    <img src="Website Portfolio/GameDesign.png" alt="Game Design Image">
+                </div>
+                <h3>Game Design</h3>
+            </div>
+
+        </div>
+
+        <!-- Expanded modal -->
+        <div id="portfolio-expanded" aria-hidden="true" role="dialog" aria-modal="true">
+            <button id="close-expanded" aria-label="Close expanded project">✕</button>
+
+            <div class="expanded-media">
+                <!-- video OR image will be shown depending on the project -->
+                <video id="expanded-video" autoplay muted loop playsinline style="display:none;"></video>
+                <img id="expanded-image" alt="" style="display:none; width:100%; border-radius:20px; margin-bottom:20px;" />
+            </div>
+
+            <div id="expanded-gifs" class="expanded-gifs"></div>
+            <h3 id="expanded-title"></h3>
+            <div id="expanded-description"></div>
+        </div>
     </section>
 
+    <script>
+        (function() {
+            const cards = document.querySelectorAll('.portfolio-card');
+            const expanded = document.getElementById('portfolio-expanded');
+            const expandedVideo = document.getElementById('expanded-video');
+            const expandedImage = document.getElementById('expanded-image');
+            const expandedGifs = document.getElementById('expanded-gifs');
+            const expandedTitle = document.getElementById('expanded-title');
+            const expandedDescription = document.getElementById('expanded-description');
+            const closeBtn = document.getElementById('close-expanded');
+
+            function isImage(url) {
+                return /\.(jpe?g|png|gif|webp|svg)$/i.test(url || '');
+            }
+            function isVideo(url) {
+                return /\.(mp4|webm|ogg)$/i.test(url || '');
+            }
+
+            function openExpanded(mediaSrc, gifs = [], title = '', description = '') {
+                // set title & description (HTML is expected in card.dataset.description)
+                expandedTitle.innerHTML = title || '';
+                expandedDescription.innerHTML = description || '';
+
+                // populate gifs
+                expandedGifs.innerHTML = '';
+                (gifs || []).forEach(src => {
+                    if (!src) return;
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = title ? `${title} gif` : 'project gif';
+                    img.style.width = '150px';
+                    img.style.borderRadius = '12px';
+                    img.style.objectFit = 'cover';
+                    expandedGifs.appendChild(img);
+                });
+
+                // show video OR image
+                if (isVideo(mediaSrc)) {
+                    expandedImage.style.display = 'none';
+                    expandedImage.src = '';
+                    expandedVideo.style.display = '';
+                    expandedVideo.pause();
+                    // assign src properly and load
+                    expandedVideo.src = mediaSrc;
+                    expandedVideo.load();
+                    expandedVideo.play().catch(()=>{ /* ignore autoplay errors */ });
+                } else if (isImage(mediaSrc)) {
+                    expandedVideo.style.display = 'none';
+                    // stop and clear video
+                    expandedVideo.pause();
+                    expandedVideo.removeAttribute('src');
+                    try { expandedVideo.load(); } catch(e) {}
+                    expandedImage.style.display = '';
+                    expandedImage.src = mediaSrc;
+                    expandedImage.alt = title ? `${title} thumbnail` : 'project thumbnail';
+                } else {
+                    // no media: hide both
+                    expandedVideo.style.display = 'none';
+                    expandedImage.style.display = 'none';
+                }
+
+                expanded.classList.add('active');
+                expanded.setAttribute('aria-hidden', 'false');
+
+                // keep focus on modal for accessibility
+                closeBtn.focus();
+            }
+
+            function closeExpanded() {
+                expanded.classList.remove('active');
+                expanded.setAttribute('aria-hidden', 'true');
+
+                // stop/clear video to prevent audio/performance issues
+                expandedVideo.pause();
+                expandedVideo.removeAttribute('src');
+                try { expandedVideo.load(); } catch(e) {}
+
+                // clear image
+                expandedImage.src = '';
+            }
+
+            // Attach click to each portfolio card
+            cards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // avoid clicks on inner controls if any in future
+                    if (e.target.closest('.no-expand')) return;
+
+                    // determine media source: prefer <video> source, else <img>
+                    let mediaSrc = '';
+                    const vid = card.querySelector('video');
+                    const img = card.querySelector('img');
+
+                    if (vid) {
+                        const sourceEl = vid.querySelector('source');
+                        mediaSrc = (sourceEl && sourceEl.src) ? sourceEl.src : (vid.currentSrc || vid.src || '');
+                    } else if (img) {
+                        mediaSrc = img.src || '';
+                    }
+
+                    // parse gifs safely
+                    let gifs = [];
+                    try { gifs = JSON.parse(card.getAttribute('data-gifs') || '[]'); } catch(e) { gifs = []; }
+
+                    const title = card.getAttribute('data-title') || (card.querySelector('h3') && card.querySelector('h3').textContent) || '';
+                    const description = card.getAttribute('data-description') || '';
+
+                    openExpanded(mediaSrc, gifs, title, description);
+
+                    // do not change page scroll position (we only toggle the modal)
+                    e.preventDefault();
+                });
+            });
+
+            // close handlers
+            closeBtn.addEventListener('click', closeExpanded);
+
+            // click outside content closes the modal:
+            // detect clicks on the modal overlay (the expanded element itself)
+            expanded.addEventListener('click', (e) => {
+                // if the clicked target is the overlay (not the content), close
+                if (e.target === expanded) closeExpanded();
+            });
+
+            // close on Escape
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && expanded.classList.contains('active')) {
+                    closeExpanded();
+                }
+            });
+        })();
+    </script>
+    
+    
 <section id="contact">
     <div style="width: 100%; height: 4px; background-color: rgb(58, 58, 58); margin-bottom: 20px;"></div> <!-- Full-width separator -->
     
@@ -780,6 +1020,61 @@
     <footer>
         <p>&copy; 2023 Guilherme Cardoso. All rights reserved.</p> <!-- Copyright notice -->
     </footer>
+
+    <script>
+        let lastScrollTop = 0; // Last scroll position
+        const header = document.querySelector('header'); // Select the header
+        let isHidden = false; // Track if header is hidden
+
+        // Handle scroll
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down → hide header
+                header.style.top = "-120px"; // Adjust if header is taller
+                isHidden = true;
+            } else {
+                // Scrolling up → show header
+                header.style.top = "20px"; // Floating effect
+                isHidden = false;
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Avoid negative scroll
+        });
+
+        // Show header when mouse moves near the top
+        window.addEventListener('mousemove', function(e) {
+            if (e.clientY < 50 && isHidden) {
+                // If mouse is within top 50px and header is hidden
+                header.style.top = "20px"; // Show header
+                isHidden = false;
+            }
+        });
+    </script>
+
+    <script>
+        const header = document.querySelector('header');
+        const headerHeight = header.offsetHeight; // height of fixed header
+
+        document.querySelectorAll('header nav ul li a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // prevent default jump
+                const targetId = this.getAttribute('href').substring(1); // remove #
+                const targetSection = document.getElementById(targetId);
+
+                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+   
+   
+    
 
 </body>
 
