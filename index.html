@@ -390,139 +390,181 @@
             line-height: 1.6;
         }
 
-        #portfolio { padding: 60px 20px; text-align: center; background-color: #f9f9f9; }
-        .skills-title { font-size: clamp(2em,5vw,3em); margin-bottom: 40px; color: #3a3a3a; }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            justify-items: center;
+        .project {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
         }
 
-        /* Card styling */
-        .portfolio-card {
-            background: rgba(255,255,255,0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 25px;
+        .project video, .project img {
             width: 100%;
-            max-width: 350px;
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-        .portfolio-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-        .portfolio-image img, .portfolio-video video {
-            width: 100%;
-            border-radius: 15px;
+            max-width: 900px;
+            border-radius: 20px;
             margin-bottom: 15px;
         }
 
-        .portfolio-card h3 { margin-bottom: 10px; color: #333; }
-
-        /* Expanded modal */
-        #portfolio-expanded {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            width: 90%;
-            max-width: 900px;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            padding: 30px;
-            z-index: 1000;
-            transition: transform 0.5s ease;
-            overflow-y: auto;
-            max-height: 90vh;
-        }
-        #portfolio-expanded.active { transform: translate(-50%, -50%) scale(1); }
-
-        #portfolio-expanded video {
-            width: 100%;
-            border-radius: 20px;
-            margin-bottom: 20px;
-        }
-
-        #expanded-gifs {
+        .project-gifs {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
-        #expanded-gifs img { width: 150px; border-radius: 15px; }
 
-        #expanded-title { margin-bottom: 15px; font-size: 2em; color: #222; }
-        #expanded-description { text-align: left; }
+        .project-gifs img {
+            width: 150px;
+            border-radius: 15px;
+        }
 
-        /* Close button for expanded portfolio modal */
-        #close-expanded {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(228, 228, 228, 0.46); /* Bright red */
+        .project-text {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            padding: 25px 20px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 900px;
+            box-sizing: border-box;
+        }
+
+        .project-text h3 {
+            font-family: 'Arial Narrow Bold', sans-serif;
+            font-size: clamp(2em, 4vw, 2.5em);
+            text-align: center;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .project-text p,
+        .project-text ul {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.1em; /* Uniform text size */
+            line-height: 1.6; /* Comfortable reading */
+            color: #333; /* Consistent text color */
+            margin-bottom: 10px; /* Space after each element */
+        }
+
+        .project-text ul {
+            padding-left: 20px; /* Standard indent for bullet points */
+        }
+
+        .project-text li {
+            margin-bottom: 6px; /* Space between bullet points */
+        }
+
+        .project-separator {
+            width: 60%;
+            border: 0;
+            height: 5px;
+            background: rgba(0,0,0,0.2);
+            margin: 50px auto; /* space above and below */
+            border-radius: 3px;
+        }
+        
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+            min-height: 70vh;
+        }
+
+        .section-title {
+            font-family: 'Arial Narrow Bold', sans-serif;
+            font-size: clamp(2em, 5vw, 3em);
             color: #3a3a3a;
-            font-size: 2.5rem; /* Bigger X */
-            font-weight: bold;
-            width: 60px;  /* Fixed width */
-            height: 60px; /* Fixed height, same as width */
-            border: none;
-            border-radius: 50%; /* Perfect circle */
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 1010;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contact-card {
+            background-color: #fff;
+            border-radius: 25px;
+            padding: 30px 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .contact-icon-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: background 0.2s ease, transform 0.2s ease;
-        }
-
-        /* Hover effect */
-        #close-expanded:hover {
-            background: rgb(198, 198, 198);
-            transform: scale(1.15);
-        }
-
-
-        #contact {
-        display: flex; /* Enables flexbox layout */
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Centers items horizontally */
-        padding: 40px; /* Padding around the contact section */
-        background-color: #f4f4f4; /* Background color for the contact section */
-        }
-
-        .contact-info {
-            display: flex; /* Enables flexbox layout for contact items */
-            flex-wrap: wrap; /* Allows items to wrap onto the next line */
-            justify-content: center; /* Center items */
-        }
-
-        .contact-item {
-            display: flex; /* Enables flexbox layout for icon and text */
-            flex-direction: column; /* Stack icon above text */
-            align-items: center; /* Center items */
-            margin: 20px; /* Margin around each contact item */
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
         }
 
         .contact-icon {
-            width: 50px; /* Width for contact icons */
-            height: 50px; /* Height for contact icons */
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .contact-icon:hover {
+            transform: scale(1.15);
+            filter: brightness(1.2);
         }
 
         .contact-text {
-            font-size: clamp(1em, 3vw, 1.5em); /* Responsive font size for text */
-            text-align: center; /* Center the text */
-            color: rgb(58, 58, 58); /* Color for text */
+            font-family: 'Arial', sans-serif;
+            font-size: clamp(1em, 2.5vw, 1.5em);
+            color: #3a3a3a;
         }
 
-        @media (max-width: 768px) {
-            .contact-item {
-                margin: 10px; /* Adjust margin for smaller screens */
-            }
+        .contact-motivation {
+            font-family: 'Arial', sans-serif;
+            font-size: clamp(1em, 2.5vw, 1.5em);
+            color: #3a3a3a;
+            text-align: center;
         }
+
+        .scroll-top {
+            display: block;
+            margin-top: 20px;
+        }
+
+        .contact-arrow {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-arrow:hover {
+            transform: translateY(-5px);
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 70px; /* slightly above the icon */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #222;
+            color: #fff;
+            padding: 8px 14px;
+            border-radius: 12px;
+            font-size: 0.9em;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+        }
+
+        .tooltip.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
 
         /* Footer styling */
         footer {
@@ -732,40 +774,52 @@
 
 
     <section id="portfolio">
-        <h2 class="skills-title">Portfolio</h2>
+        <h2 class="skills-title" style="text-align: center; margin-bottom: 50px;">Portfolio</h2>
 
-        <div class="portfolio-grid">
-            <!-- Jak Mars Project -->
-            <div class="portfolio-card" data-title="Jak Mars" data-description="
-            <h3>Jak Mars</h3>
-            <p>
-                <em>Jak Mars</em> was my solo project for my final project of the Unreal Engine Programming Course where I focused on building a complete third-person action adventure in Unreal Engine 5. 
-                The main challenge was creating scalable gameplay systems using Blueprint architecture, while also delivering responsive combat, AI, 
-                and a functional user interface.
-            </p>
-            <ul>
-                <li>Implemented AI with <strong>Behavior Trees & Blackboards</strong> for dynamic decision-making.</li>
-                <li>Developed modular gameplay mechanics with a <strong>Blueprint approach</strong>.</li>
-                <li>Integrated <strong>UMG UI</strong>: HUDs, menus, health bars, and overlays.</li>
-                <li>Built environments with <strong>Nanite meshes and Lumen lighting, and foliage</strong>.</li>
-                <li>Designed adaptive audio using <strong>Unreal Audio Engine</strong> with spatialized SFX and event-driven music.</li>
-            </ul>
-        " data-gifs='["Website Portfolio/JakMarsStartMenuGIF.gif","Website Portfolio/JakMarsInGameMenuGIF.gif","Website Portfolio/JakMarsGameOverMenuGIF.gif"]'>
-                <div class="portfolio-video">
-                    <video autoplay muted loop playsinline>
-                        <source src="Website Portfolio/Jak Mars Trailer.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <h3>Jak Mars</h3>
+        <!-- Jak Mars -->
+        <div class="project">
+            <video autoplay muted loop playsinline>
+                <source src="Website Portfolio/Jak Mars Trailer.mp4" type="video/mp4">
+            </video>
+            <div class="project-gifs">
+                <img src="Website Portfolio/JakMarsStartMenuGIF.gif" alt="Jak Mars GIF">
+                <img src="Website Portfolio/JakMarsInGameMenuGIF.gif" alt="Jak Mars GIF">
+                <img src="Website Portfolio/JakMarsGameOverMenuGIF.gif" alt="Jak Mars GIF">
             </div>
+            <div class="project-text">
+                <h3>Jak Mars</h3>
+                <p>
+                    <em>Jak Mars</em> was my solo final project of the Unreal Engine Programming Course where I focused on building a complete third-person action adventure in Unreal Engine 5.
+                    The main challenge was creating scalable gameplay systems using Blueprint architecture, while also delivering responsive combat, AI,
+                    and a functional user interface.
+                </p>
+                <ul>
+                    <li>Implemented AI with <strong>Behavior Trees & Blackboards</strong> for dynamic decision-making.</li>
+                    <li>Developed modular gameplay mechanics with a <strong>Blueprint approach</strong>.</li>
+                    <li>Integrated <strong>UMG UI</strong>: HUDs, menus, health bars, and overlays.</li>
+                    <li>Built environments with <strong>Nanite meshes and Lumen lighting, and foliage</strong>.</li>
+                    <li>Designed adaptive audio using <strong>Unreal Audio Engine</strong> with spatialized SFX and event-driven music.</li>
+                </ul>
+            </div>
+        </div>
 
-            <!-- Golden Taco Project -->
-            <div class="portfolio-card" data-title="Golden Taco" data-description="
-           </div>
+        <hr class="project-separator">
+        
+        <!-- Golden Taco -->
+        <div class="project">
+            <video autoplay muted loop playsinline>
+                <source src="Website Portfolio/GoldenTaco Trailer.mp4" type="video/mp4">
+            </video>
+            <div class="project-gifs">
+                <img src="Website Portfolio/GoldenTacoStartMenuGIF.gif" alt="Golden Taco GIF">
+                <img src="Website Portfolio/GoldenTacoInGameMenuGIF.gif" alt="Golden Taco GIF">
+                <img src="Website Portfolio/GoldenTacoGameOverMenuGIF.gif" alt="Golden Taco GIF">
+            </div>
+            <div class="project-text">
                 <h3>Golden Taco</h3>
                 <p>
-                    <em>Golden Taco</em> was created during the <strong>Global Game Jam</strong> in a 48-hour sprint with a small multidisciplinary team. 
-                    The project emphasized rapid prototyping under strict time constraints, requiring quick technical decisions and effective collaboration. 
+                    <em>Golden Taco</em> was created during the <strong>Global Game Jam</strong> in a 48-hour sprint with a small multidisciplinary team.
+                    The project emphasized rapid prototyping under strict time constraints, requiring quick technical decisions and effective collaboration.
                     My primary responsibilities were gameplay programming and input systems, alongside integrating UI/UX elements to deliver a complete vertical slice.
                 </p>
                 <ul>
@@ -775,22 +829,21 @@
                     <li>Collaborated with artists and designers to optimize levels using <strong>dynamic materials, LODs, and efficient asset workflows</strong>.</li>
                 </ul>
             </div>
-        " data-gifs='["Website Portfolio/GoldenTacoStartMenuGIF.gif","Website Portfolio/GoldenTacoInGameMenuGIF.gif","Website Portfolio/GoldenTacoGameOverMenuGIF.gif"]'>
-                <div class="portfolio-video">
-                    <video autoplay muted loop playsinline>
-                        <source src="Website Portfolio/GoldenTaco Trailer.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <h3>Golden Taco</h3>
-            </div>
+        </div>
 
-            <!-- Unreal Engine Programming -->
-            <div class="portfolio-card" data-title="Unreal Engine Programming" data-description="
-            </div>
+        <hr class="project-separator">
+        
+        <!-- Unreal Engine Programming -->
+        <div class="project">
+            <video autoplay muted loop playsinline>
+                <source src="Website Portfolio/UEProgramming.mp4" type="video/mp4">
+            </video>
+            <div class="project-gifs"></div>
+            <div class="project-text">
                 <h3>Unreal Engine Programming</h3>
                 <p>
-                    This project was part of an intensive program at <strong>Tokio New Technology School</strong>, guided by industry professional Diony Costa. 
-                    The focus was on mastering <strong>Unreal Engine 5 programming</strong> through a project-based approach, tackling both Blueprint scripting and C++ integrations. 
+                    This project was part of an intensive program at <strong>Tokio New Technology School</strong>, guided by industry professional Diony Costa.
+                    The focus was on mastering <strong>Unreal Engine 5 programming</strong> through a project-based approach, tackling both Blueprint scripting and C++ integrations.
                     Each exercise was designed to simulate a real production pipeline, emphasizing gameplay systems, UI programming, and technical optimization.
                 </p>
                 <ul>
@@ -802,224 +855,104 @@
                     <li>Worked on <strong>Camera systems, Pawns, Animation Blueprints, and Widget-driven HUDs</strong>.</li>
                 </ul>
             </div>
-        " data-gifs='[""]'>
-                <div class="portfolio-video">
-                    <video autoplay muted loop playsinline>
-                        <source src="Website Portfolio/UEProgramming.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <h3>Unreal Engine Programming</h3>
-            </div>
-
-            <!-- Game Design -->
-            <div class="portfolio-card" data-title="Game Design Foundations" data-description="
-                    <h3>Game Design Foundations</h3>
-                    <p>
-                        Alongside programming, I undertook a dedicated course in <strong>Game Design</strong>, 
-                        where I explored the creative and structural aspects of video game development. 
-                        The curriculum combined theory with practice, from building 
-                        <strong>Game Design Documents (GDDs)</strong> to modeling in Blender and creating early-stage prototypes. 
-                        The training emphasized how to balance narrative, mechanics, and player experience within a coherent production framework.
-                    </p>
-                    <ul>
-                        <li>Studied <strong>Narrative Design, Level Design, Environment & Character Design</strong>.</li>
-                        <li>Developed <strong>flowcharts and GDDs</strong> for structured design documentation.</li>
-                        <li>Modeled basic assets in <strong>Blender</strong> for early-level prototyping.</li>
-                        <li>Explored <strong>game rules, dynamics, genres, platforms, and player types</strong>.</li>
-                        <li>Compared <strong>Unity and Unreal</strong> from a designer’s perspective.</li>
-                        <li>Analyzed <strong>game industry history and aesthetics</strong> to contextualize modern design.</li>
-                    </ul>
-                 "
-                 data-gifs='[""]'>
-
-                <div class="portfolio-image">
-                    <img src="Website Portfolio/GameDesign.png" alt="Game Design Image">
-                </div>
-                <h3>Game Design</h3>
-            </div>
-
         </div>
 
-        <!-- Expanded modal -->
-        <div id="portfolio-expanded" aria-hidden="true" role="dialog" aria-modal="true">
-            <button id="close-expanded" aria-label="Close expanded project">✕</button>
-
-            <div class="expanded-media">
-                <!-- video OR image will be shown depending on the project -->
-                <video id="expanded-video" autoplay muted loop playsinline style="display:none;"></video>
-                <img id="expanded-image" alt="" style="display:none; width:100%; border-radius:20px; margin-bottom:20px;" />
+        <hr class="project-separator">
+        
+        <!-- Game Design -->
+        <div class="project">
+            <div class="project-image">
+                <img src="Website Portfolio/GameDesign.png" alt="Game Design Image">
             </div>
-
-            <div id="expanded-gifs" class="expanded-gifs"></div>
-            <h3 id="expanded-title"></h3>
-            <div id="expanded-description"></div>
+            <div class="project-gifs"></div>
+            <div class="project-text">
+                <h3>Game Design Foundations</h3>
+                <p>
+                    Alongside programming, I undertook a dedicated course in <strong>Game Design</strong>,
+                    where I explored the creative and structural aspects of video game development.
+                    The curriculum combined theory with practice, from building
+                    <strong>Game Design Documents (GDDs)</strong> to modeling in Blender and creating early-stage prototypes.
+                    The training emphasized how to balance narrative, mechanics, and player experience within a coherent production framework.
+                </p>
+                <ul>
+                    <li>Studied <strong>Narrative Design, Level Design, Environment & Character Design</strong>.</li>
+                    <li>Developed <strong>flowcharts and GDDs</strong> for structured design documentation.</li>
+                    <li>Modeled basic assets in <strong>Blender</strong> for early-level prototyping.</li>
+                    <li>Explored <strong>game rules, dynamics, genres, platforms, and player types</strong>.</li>
+                    <li>Compared <strong>Unity and Unreal</strong> from a designer’s perspective.</li>
+                    <li>Analyzed <strong>game industry history and aesthetics</strong> to contextualize modern design.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <script>
-        (function() {
-            const cards = document.querySelectorAll('.portfolio-card');
-            const expanded = document.getElementById('portfolio-expanded');
-            const expandedVideo = document.getElementById('expanded-video');
-            const expandedImage = document.getElementById('expanded-image');
-            const expandedGifs = document.getElementById('expanded-gifs');
-            const expandedTitle = document.getElementById('expanded-title');
-            const expandedDescription = document.getElementById('expanded-description');
-            const closeBtn = document.getElementById('close-expanded');
-
-            function isImage(url) {
-                return /\.(jpe?g|png|gif|webp|svg)$/i.test(url || '');
-            }
-            function isVideo(url) {
-                return /\.(mp4|webm|ogg)$/i.test(url || '');
-            }
-
-            function openExpanded(mediaSrc, gifs = [], title = '', description = '') {
-                // set title & description (HTML is expected in card.dataset.description)
-                expandedTitle.innerHTML = title || '';
-                expandedDescription.innerHTML = description || '';
-
-                // populate gifs
-                expandedGifs.innerHTML = '';
-                (gifs || []).forEach(src => {
-                    if (!src) return;
-                    const img = document.createElement('img');
-                    img.src = src;
-                    img.alt = title ? `${title} gif` : 'project gif';
-                    img.style.width = '150px';
-                    img.style.borderRadius = '12px';
-                    img.style.objectFit = 'cover';
-                    expandedGifs.appendChild(img);
-                });
-
-                // show video OR image
-                if (isVideo(mediaSrc)) {
-                    expandedImage.style.display = 'none';
-                    expandedImage.src = '';
-                    expandedVideo.style.display = '';
-                    expandedVideo.pause();
-                    // assign src properly and load
-                    expandedVideo.src = mediaSrc;
-                    expandedVideo.load();
-                    expandedVideo.play().catch(()=>{ /* ignore autoplay errors */ });
-                } else if (isImage(mediaSrc)) {
-                    expandedVideo.style.display = 'none';
-                    // stop and clear video
-                    expandedVideo.pause();
-                    expandedVideo.removeAttribute('src');
-                    try { expandedVideo.load(); } catch(e) {}
-                    expandedImage.style.display = '';
-                    expandedImage.src = mediaSrc;
-                    expandedImage.alt = title ? `${title} thumbnail` : 'project thumbnail';
-                } else {
-                    // no media: hide both
-                    expandedVideo.style.display = 'none';
-                    expandedImage.style.display = 'none';
-                }
-
-                expanded.classList.add('active');
-                expanded.setAttribute('aria-hidden', 'false');
-
-                // keep focus on modal for accessibility
-                closeBtn.focus();
-            }
-
-            function closeExpanded() {
-                expanded.classList.remove('active');
-                expanded.setAttribute('aria-hidden', 'true');
-
-                // stop/clear video to prevent audio/performance issues
-                expandedVideo.pause();
-                expandedVideo.removeAttribute('src');
-                try { expandedVideo.load(); } catch(e) {}
-
-                // clear image
-                expandedImage.src = '';
-            }
-
-            // Attach click to each portfolio card
-            cards.forEach(card => {
-                card.addEventListener('click', (e) => {
-                    // avoid clicks on inner controls if any in future
-                    if (e.target.closest('.no-expand')) return;
-
-                    // determine media source: prefer <video> source, else <img>
-                    let mediaSrc = '';
-                    const vid = card.querySelector('video');
-                    const img = card.querySelector('img');
-
-                    if (vid) {
-                        const sourceEl = vid.querySelector('source');
-                        mediaSrc = (sourceEl && sourceEl.src) ? sourceEl.src : (vid.currentSrc || vid.src || '');
-                    } else if (img) {
-                        mediaSrc = img.src || '';
-                    }
-
-                    // parse gifs safely
-                    let gifs = [];
-                    try { gifs = JSON.parse(card.getAttribute('data-gifs') || '[]'); } catch(e) { gifs = []; }
-
-                    const title = card.getAttribute('data-title') || (card.querySelector('h3') && card.querySelector('h3').textContent) || '';
-                    const description = card.getAttribute('data-description') || '';
-
-                    openExpanded(mediaSrc, gifs, title, description);
-
-                    // do not change page scroll position (we only toggle the modal)
-                    e.preventDefault();
-                });
-            });
-
-            // close handlers
-            closeBtn.addEventListener('click', closeExpanded);
-
-            // click outside content closes the modal:
-            // detect clicks on the modal overlay (the expanded element itself)
-            expanded.addEventListener('click', (e) => {
-                // if the clicked target is the overlay (not the content), close
-                if (e.target === expanded) closeExpanded();
-            });
-
-            // close on Escape
-            window.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && expanded.classList.contains('active')) {
-                    closeExpanded();
-                }
-            });
-        })();
-    </script>
+    <hr class="project-separator">
     
-    
-<section id="contact">
-    <div style="width: 100%; height: 4px; background-color: rgb(58, 58, 58); margin-bottom: 20px;"></div> <!-- Full-width separator -->
-    
-    <p style="font-family: 'Arial'; font-size: 1.5em; color: rgb(58, 58, 58); text-align: center;">Guilherme Cardoso - Game Programmer</p> <!-- Small text -->
-    
-    <h2 style="font-family: 'Arial Narrow Bold'; font-size: 4em; color: rgb(58, 58, 58); text-align: center;">Contact Me!</h2> <!-- Title for Contact section -->
-    
-    <div class="contact-info">
-        <div class="contact-item">
-            <img src="Website Portfolio/Email.png" alt="Email Icon" class="contact-icon" />
-            <p class="contact-text">guilhermeb-cardoso@outlook.com</p> <!-- Email text -->
+    <section id="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Contact Me!</h2>
+
+            <!-- Email Card -->
+            <div class="contact-card">
+                <div class="contact-icon-wrapper">
+                    <div class="contact-item" id="contactEmail">
+                        <img src="Website Portfolio/Email.png" alt="Email Icon" class="contact-icon">
+                        <p class="contact-text">guilhermeb-cardoso@outlook.com</p>
+                        <span class="tooltip" id="contactTooltip">Copied!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Card -->
+            <div class="contact-card">
+                <div class="contact-icon-wrapper">
+                    <a href="https://github.com/guilhermeb-cardoso" target="_blank">
+                        <img src="Website Portfolio/github.png" alt="GitHub Icon" class="contact-icon">
+                    </a>
+                    <a href="https://drive.google.com/file/d/1sVwvNNRD4uO9JU8hjmzG5zDLc0CQg6GO/view" target="_blank">
+                        <img src="Website Portfolio/CV.png" alt="CV Icon" class="contact-icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/guilhermeb-cardoso/" target="_blank">
+                        <img src="Website Portfolio/linkedin.png" alt="LinkedIn Icon" class="contact-icon">
+                    </a>
+                </div>
+                <p class="contact-text">Connect with me online!</p>
+            </div>
+
+            <!-- Optional motivational text -->
+            <p class="contact-motivation">Let's create amazing experiences together!</p>
+
+            <!-- Scroll to top -->
+            <a href="#home" class="scroll-top">
+                <img src="Website Portfolio/arrow-up.png" alt="Arrow Up" class="contact-arrow">
+            </a>
         </div>
-    </div>
-        <div class="icon-container" style="display: flex; gap: 20px; margin-top: 10px;"> <!-- Social media icons -->
-            <a href="https://github.com/guilhermeb-cardoso" target="_blank"><img src="Website Portfolio/github.png" alt="GitHub" style="width: 50px; height: 50px;"></a> <!-- GitHub icon -->
-            <a href="https://drive.google.com/file/d/1sVwvNNRD4uO9JU8hjmzG5zDLc0CQg6GO/view" target="_blank"><img src="Website Portfolio/CV.png" alt="CV" style="width: 50px; height: 50px;"></a> <!-- CV icon -->
-            <a href="https://www.linkedin.com/in/guilhermeb-cardoso/" target="_blank"><img src="Website Portfolio/linkedin.png" alt="LinkedIn" style="width: 50px; height: 50px;"></a> <!-- LinkedIn icon -->
-        </div>
-    </div>
-    <!-- New text and arrow image -->
-    <p style="font-family: 'Arial'; font-size: 1.5em; color: rgb(58, 58, 58); text-align: center; margin-top: 20px;">Let's create amazing experiences together!</p> <!-- New text -->
-    
-    <a href="#home" style="display: block; text-align: center; margin-top: 10px;"> <!-- Link to home section -->
-        <img src="Website Portfolio/arrow-up.png" alt="Arrow Up" style="width: 50px; height: 50px;"/> <!-- Upward arrow image -->
-    </a>
-    <div style="width: 100%; height: 4px; background-color: rgb(58, 58, 58); margin-top: 20px; margin-bottom: 20px;"></div> <!-- Full-width separator -->
     </section>
+
 
     <footer>
         <p>&copy; 2023 Guilherme Cardoso. All rights reserved.</p> <!-- Copyright notice -->
     </footer>
+
+    <script>
+        const contactEmail = document.getElementById('contactEmail');
+        const contactTooltip = document.getElementById('contactTooltip');
+
+        contactEmail.addEventListener('click', () => {
+            // Copy email to clipboard
+            const emailText = contactEmail.querySelector('.contact-text').textContent;
+            navigator.clipboard.writeText(emailText)
+                .then(() => {
+                    // Show tooltip
+                    contactTooltip.classList.add('show');
+                    setTimeout(() => {
+                        contactTooltip.classList.remove('show');
+                    }, 2000); // hide after 2 seconds
+                })
+                .catch(err => console.error('Failed to copy email: ', err));
+        });
+    </script>
+
 
     <script>
         let lastScrollTop = 0; // Last scroll position
