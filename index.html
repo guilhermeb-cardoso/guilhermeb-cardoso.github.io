@@ -455,12 +455,92 @@
         .project-separator {
             width: 60%;
             border: 0;
-            height: 5px;
+            height: 2px;
             background: rgba(0,0,0,0.2);
             margin: 50px auto; /* space above and below */
             border-radius: 3px;
         }
-        
+
+        .portfolio-academic {
+            margin: 60px auto;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .portfolio-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-academic {
+            margin: 60px auto;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .portfolio-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .portfolio-section-title {
+            font-size: 2rem;
+            margin: 60px 0 30px;
+            text-align: center;
+            color: #333;
+        }
+
+        .portfolio-separator {
+            margin: 50px auto;
+            border: 0;
+            height: 5px;
+            width: 90%;
+            background: rgba(0,0,0,0.35);
+            border-radius: 3px;
+        }
+
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .academic-project {
+            text-align: left;
+        }
+
+        .academic-project .media {
+            margin-bottom: 20px;
+        }
+
+        .academic-project video,
+        .academic-project img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        }
+
+        .academic-project h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        .academic-project p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .academic-project ul {
+            padding-left: 20px;
+            list-style-type: disc;
+            font-size: 1rem;
+        }
+
 
         .contact-container {
             display: flex;
@@ -680,7 +760,7 @@
                     I strive to learn new things every day and enjoy crafting enjoyable, immersive, and unforgettable experiences.
                 </p>
                 <p>
-                    Whether exploring new coding techniques or improving my game design skills, I always aim for growth.
+                    Whether exploring new coding techniques or improving my game programming skills, I always aim for growth.
                 </p>
             </div>
         </div>
@@ -748,7 +828,7 @@
                 </div>
                 <h3>Tools & Workflow</h3>
                 <ul>
-                    <li>Git / GitHub / Git LFS</li>
+                    <li>Git / GitHub / Plastic SCM</li>
                     <li>Jira / Project management</li>
                     <li>Visual Studio / Rider IDEs</li>
                     <li>Profiling, debugging, optimization</li>
@@ -775,7 +855,41 @@
 
     <section id="portfolio">
         <h2 class="skills-title" style="text-align: center; margin-bottom: 50px;">Portfolio</h2>
+        <div class="separator"></div>
+        
+        <!-- Professional Project -->
+        <h2 class="portfolio-section-title">Professional Projects</h2>
+        <!-- Hovershock Project -->
+        <section class="project">
+            <div class="project-image">
+                <img src="Website Portfolio/hovershock.jpg" alt="Hovershock Image">
+            </div>
+            <div class="project-text">
+                <h3 style="text-align:center;">Hovershock</h3>
+                <p>"<strong>Hovershock</strong> is a fast paced
+                    and <strong>physics based multiplayer game</strong> where the player controls a drone
+                    full of weapons and mind-bending powers in an exaggerated and colorful world, full of life, movement
+                    and crazy explosions."
+                </p>
+                <p>
+                    During my internship at <strong>Redcatpig</strong>, I had the opportunity to join the core team 
+                    of one of the studio’s flagship Unreal Engine projects, <strong>Hovershock</strong>.
+                </p>
+                <ul>
+                    <li>Transitioned game systems from <strong>Blueprint to C++</strong>, ensuring clean, scalable, and high-performance code.</li>
+                    <li><strong>Identified, diagnosed, and fixed bugs</strong>, improving overall game stability and user experience.</li>
+                    <li>Logged detailed <strong>bug reports and feedback</strong> to streamline communication between design and development teams.</li>
+                    <li>Participated in <strong>playtesting sessions</strong> with the game designer and producer, providing actionable insights.</li>
+                    <li>Collaborated in team meetings and sprint planning, contributing technical ideas and solutions to real production challenges.</li>
+                </ul>
+            </div>
+        </section>
 
+        <hr class="portfolio-separator">
+
+        <!-- Personal Projects -->
+        <h2 class="portfolio-section-title">Personal Projects</h2>
+        
         <!-- Jak Mars -->
         <div class="project">
             <video autoplay muted loop playsinline>
@@ -795,9 +909,9 @@
                 </p>
                 <ul>
                     <li>Implemented AI with <strong>Behavior Trees & Blackboards</strong> for dynamic decision-making.</li>
-                    <li>Developed modular gameplay mechanics with a <strong>Blueprint approach</strong>.</li>
+                    <li>Developed modular gameplay mechanics and interactive objects using a<strong> Blueprint-driven approach</strong>, ensuring smooth character movement, responsive abilities, and engaging player-world interactivity.</li>
                     <li>Integrated <strong>UMG UI</strong>: HUDs, menus, health bars, and overlays.</li>
-                    <li>Built environments with <strong>Nanite meshes and Lumen lighting, and foliage</strong>.</li>
+                    <li>Built environments with <strong>Nanite meshes, Lumen lighting and foliage</strong>.</li>
                     <li>Designed adaptive audio using <strong>Unreal Audio Engine</strong> with spatialized SFX and event-driven music.</li>
                 </ul>
             </div>
@@ -818,28 +932,32 @@
             <div class="project-text">
                 <h3>Golden Taco</h3>
                 <p>
-                    <em>Golden Taco</em> was created during the <strong>Global Game Jam</strong> in a 48-hour sprint with a small multidisciplinary team.
-                    The project emphasized rapid prototyping under strict time constraints, requiring quick technical decisions and effective collaboration.
+                    <em>Golden Taco</em> was created during the <strong>Global Game Jam</strong> in a 48-hour sprint.
+                    The project emphasized rapid prototyping under strict time constraints, requiring quick technical decisions and effective implementation.
                     My primary responsibilities were gameplay programming and input systems, alongside integrating UI/UX elements to deliver a complete vertical slice.
                 </p>
                 <ul>
                     <li>Implemented player controls using the <strong>Enhanced Input System</strong> for modular bindings and adaptability.</li>
                     <li>Developed responsive <strong>UMG menus and in-game HUDs</strong> within the jam timeframe.</li>
                     <li>Handled <strong>GameMode and PlayerController logic</strong> for seamless state transitions (pause, restart, game-over).</li>
-                    <li>Collaborated with artists and designers to optimize levels using <strong>dynamic materials, LODs, and efficient asset workflows</strong>.</li>
                 </ul>
             </div>
         </div>
+    </section>
 
-        <hr class="project-separator">
-        
-        <!-- Unreal Engine Programming -->
-        <div class="project">
-            <video autoplay muted loop playsinline>
-                <source src="Website Portfolio/UEProgramming.mp4" type="video/mp4">
-            </video>
-            <div class="project-gifs"></div>
-            <div class="project-text">
+    <hr class="portfolio-separator">
+
+    <section class="portfolio-academic">
+        <h2 class="portfolio-title">Academic Projects</h2>
+
+        <div class="academic-grid">
+            <!-- Unreal Programming -->
+            <div class="academic-project">
+                <div class="media">
+                    <video autoplay muted loop playsinline>
+                        <source src="Website Portfolio/UEProgramming.mp4" type="video/mp4">
+                    </video>
+                </div>
                 <h3>Unreal Engine Programming</h3>
                 <p>
                     This project was part of an intensive program at <strong>Tokio New Technology School</strong>, guided by industry professional Diony Costa.
@@ -849,24 +967,19 @@
                 <ul>
                     <li>Engine proficiency in <strong>Blueprint & C++</strong> hybrid programming.</li>
                     <li>Programmed <strong>UI, Menus, and Interfaces</strong> with full UMG implementation.</li>
-                    <li>Developed <strong>enemy AI</strong> via Behavior Trees and controlled gameplay loops.</li>
+                    <li>Developed enemy AI via <strong>Behavior Trees and Blackboards </strong> in a controlled gameplay loops.</li>
                     <li>Implemented <strong>collisions, physics interactions, sound cues, and dynamic lighting</strong>.</li>
                     <li>Created <strong>Niagara VFX</strong> and cinematic sequences with Sequencer.</li>
                     <li>Worked on <strong>Camera systems, Pawns, Animation Blueprints, and Widget-driven HUDs</strong>.</li>
                 </ul>
             </div>
-        </div>
 
-        <hr class="project-separator">
-        
-        <!-- Game Design -->
-        <div class="project">
-            <div class="project-image">
-                <img src="Website Portfolio/GameDesign.png" alt="Game Design Image">
-            </div>
-            <div class="project-gifs"></div>
-            <div class="project-text">
-                <h3>Game Design Foundations</h3>
+            <!-- Game Design -->
+            <div class="academic-project">
+                <div class="media">
+                    <img src="Website Portfolio/GameDesign.png" alt="Game Design Image">
+                </div>
+                <h3>Game Design</h3>
                 <p>
                     Alongside programming, I undertook a dedicated course in <strong>Game Design</strong>,
                     where I explored the creative and structural aspects of video game development.
@@ -886,12 +999,14 @@
         </div>
     </section>
 
-    <hr class="project-separator">
-    
+
+
+
     <section id="contact">
         <div class="contact-container">
             <h2 class="section-title">Contact Me!</h2>
-
+            <div class="separator"></div>
+            
             <!-- Email Card -->
             <div class="contact-card">
                 <div class="contact-icon-wrapper">
@@ -919,6 +1034,8 @@
                 <p class="contact-text">Connect with me online!</p>
             </div>
 
+            <div class="separator"></div>
+            
             <!-- Optional motivational text -->
             <p class="contact-motivation">Let's create amazing experiences together!</p>
 
